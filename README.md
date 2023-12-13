@@ -3,9 +3,7 @@ The House Rental Management System with search functionality is a specialized so
 
 # LANGUAGES 
 ![image](https://github.com/vignu687/Home-rental-system/assets/91595577/953f4862-2a45-4909-aa14-f7cf38a0c61e)
-
 ![image](https://github.com/vignu687/Home-rental-system/assets/91595577/1c30c0c2-5a54-48f3-9761-73b7d77f927c)
-
 ![image](https://github.com/vignu687/Home-rental-system/assets/91595577/62a02ec5-6764-43a2-a51b-83640ea38b78)
 
 # DETAILS OF THE PROJECT 
