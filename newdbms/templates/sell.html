@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+     
+            background-image: linear-gradient( rgba(51, 13, 13, 0.479) , rgb(14, 43, 87)); 
+ 
+     background-size: cover;  /* Ensures that the background image covers the entire viewport */
+    background-repeat: no-repeat;  /* Prevents the background image from repeating */
+    width: 100%;
+    /* Add other background properties if needed */
+
+        }
+
+        form {
+            width: 80%;
+            overflow-y: scroll;
+            height: 500px;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(47, 0, 0, 0.5);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+
+
+
+        </style>
+</head>
+<body>
+   
+    <form action="sell" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+         <h2 style="text-align: center; font-weight: bolder;">SELL</h2>
+
+         <label for="address">Title:</label>
+        <input type="text" name="title" required>
+
+        <label for="image1">Image 1:</label>
+        <input type="file" name="image1" accept="image/*" required>
+
+        <label for="image2">Image 2:</label>
+        <input type="file" name="image2" accept="image/*"required>
+
+        <label for="image3">Image 3:</label>
+        <input type="file" name="image3" accept="image/*" required>
+
+        <label for="country">Country:</label>
+        <input type="text" name="country" required>
+        
+        <!-- <select name="country">
+            <option value="india">India</option>
+            <option value="china">China</option>
+        </select> -->
+
+        <label for="state">State:</label>
+        <input type="text" name="state" required>
+            
+
+        <label for="district">District:</label>
+        <input type="text" name="district" required>
+           
+
+        <label for="address">Address:</label>
+        <input type="text" name="address" required>
+
+        <label for="price">Price:</label>
+        <input type="number" name="price" value="200" required>
+
+        <label for="htype">Type:</label>
+        <select name="htype">
+            <option value="1BHK">1BHK</option>
+            <option value="2BHK">2BHK</option>
+            <option value="3BHK">3BHK</option>
+        </select>
+        
+
+        <label for="contact">Contact:</label>
+        <input type="tel" name="contact" pattern="[0-9]{10}" value="1234567891" required>
+
+        <label for="desp">Description:</label>
+        <textarea name="desp" rows="4" cols="50"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient( rgba(101, 3, 36, 0.479) , rgb(10, 60, 136)); 
+ 
+  background-size: cover;  /* Ensures that the background image covers the entire viewport */
+    background-repeat: no-repeat;  /* Prevents the background image from repeating */
+    height: 100%;
+    width: 100%;
+    /* Add other background properties if needed */
+}
+html{
+
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+#topbanner {
+
+    width: 100%;
+    background-color: #12202c;
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* position: fixed; */
+
+    margin-bottom: 12vh;
+
+
+
+}
+
+#logo {
+
+    margin-left: 3vw;
+}
+
+#logo img{
+
+    width: 200px;
+    height: 100px;
+    /* border-radius: 60%; */
+   
+}
+
+#navbar ul{
+
+    list-style: none;
+    display: flex;
+
+
+
+}
+#navbar ul li{
+
+    margin-right: 5vw;
+}
+#navbar ul li a {
+
+    text-decoration: none;
+    /* color: #fdbd57; */
+}
+
+.hover-links{
+
+    color: #fdbd57;
+    transition: 0.2s ease-out;
+}
+
+.hover-links:hover{
+    color:rgb(232, 227, 217);
+}
+
+
+
+
+
+.signup-box{
+    height:320px;
+    width: 370px;
+    margin-top: 0%;
+    margin-left: 38vw;
+    /* opacity: 0.7; */
+    border:2px solid white ;
+    border-radius: 5px;
+    background-color: transparent;
+
+}
+
+h1{
+    text-align: center;
+    padding-top: 15px;
+
+}
+ 
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+
+form label{
+    display: flex;
+    margin-top: 20px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border:1px solid gray;
+    border-radius: 6px;
+    outline: none;
+}
+
+#btn{
+    width: 300px;
+    height: 35px;
+    margin-top: 20px;
+    border:none;
+    background-color: #49c1a2; 
+    color: white;
+    font-size: 18px;
+
+
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="ss">
+        <div id="topbanner">
+
+            <div id="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnTZq1tbzCn7dpL5EoXeZbnWJ6sXMqJXALA&usqp=CAU" alt="">
+            </div>
+    
+    
+          <div id="navbar">
+            <ul>
+                <li><a href="/" class="hover-links ">HOME</a></li>
+                <li><a href="#" class="hover-links ">ABOUT</a></li>
+                
+            </ul>
+          </div>
+          
+         </div>  
+    <div class="signup-box" >
+    <h1> Login details</h1  >
+    <form action="loginuser" method="POST">
+        {% csrf_token %}
+        <label for="">Username</label>
+        <input type="text" placeholder="" id="username" name="username">
+        <label>Password</label>
+        <input type="password" placeholder="" id="pass" name="pass">
+        <button type="submit" id="btn">Login</button>
+    </form>
+    </div>
+    </div>
+
+</body>
+</html>

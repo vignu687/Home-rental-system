@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<style>
+
+
+    #topbanner {
+        width: 100%;
+        height: 103px;
+        background-color: #12202c;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        padding: 10px;
+        z-index: 1000;
+    }
+
+    #logo img {
+        width: 200px;
+        height: 100px;
+    }
+
+    #navbar ul {
+        list-style: none;
+        display: flex;
+    }
+
+    #navbar ul li {
+        margin-right: 5vw;
+    }
+
+    #navbar ul li a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .hover-links {
+        color: #fdbd57;
+        transition: 0.2s ease-out;
+    }
+
+    .hover-links:hover {
+        color: rgb(232, 227, 217);
+    }
+
+    .primebtn,
+    .primebtn2,
+    .btn {
+        border-radius: 50px;
+    }
+
+    .primebtn,
+    .primebtn2 {
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .primebtn {
+        border: 2px solid #fdbd57;
+    }
+
+    .primebtn:hover {
+        background-color: #fdbd57;
+        color: black;
+    }
+
+    .primebtn2 {
+        background-color: #fdbd57;
+        color: #12202c;
+    }
+
+    .primebtn2:hover {
+        background-color: black;
+        color: #fdbd57;
+    }
+
+    #frontpage {
+        width: 100%;
+        height: 100vh;
+        background-image: url("pexels_pixabay_276724.jpg");
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #frontpage h1 {
+        margin-top: 23vh;
+        color: rgba(255, 255, 255, 0.684);
+        font-size: 50px;
+        font-weight: 200;
+    }
+
+    #view {
+        margin-top: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 200px;
+    }
+
+    .search {
+        width: 400px;
+        height: 52px;
+        display: flex;
+        gap: 20px;
+    }
+
+    .searchbar {
+        padding: 10px;
+        width: 315px;
+        border-radius: 50px;
+        border: none;
+    }
+
+    .btn {
+        width: 100px;
+        background-color: #fdbd57;
+        border: none;
+    }
+</style>
+<body>
+    <div class="upperpart" style="margin-top: -125px;position:fixed;z-index:1200">
+        <div id="topbanner">
+            <div id="logo">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxnTZq1tbzCn7dpL5EoXeZbnWJ6sXMqJXALA&usqp=CAU" alt="">
+            </div>
+            <div class="search">
+                <input class="searchbar" type="text" placeholder="Find house, place....">
+                <button class="btn">Search</button>
+            </div>
+            <div id="navbar">
+                <ul>
+                    <li><a href="sendmainn" class="hover-links">Home</a></li>
+                    <li><a href="{% url "sell" %}" class="hover-links">SELL</a></li>
+                    <li><a href="{% url "bought" %}" class="hover-links">SOLD</a></li>
+
+
+                    <li><a href="#" class="hover-links">ABOUT</a></li>
+                    <li><a href="{% url 'logoutuser' %}" class="hover-links primebtn2">LOGOUT</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="display: flex;    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 125px;">
+        <div class="carousel-inner" style="width: 100%; border-radius:22px;">
+          <div class="carousel-item active"  style="width: 100%;">
+            <img src="{{item.image1.url}}"class="d-block w-100" alt="Hotel Image 1" style="height: 400px;">
+        </div>
+          <div class="carousel-item">
+            <img src="{{item.image2.url}}"class="d-block w-100" alt="Hotel Image 2" style="height: 400px;">
+        </div>
+          <div class="carousel-item">
+            <img src="{{ item.image3.url }}"class="d-block w-100" alt="Hotel Image 3" style="height: 400px;">
+        </div>
+        </div>
+        
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev" style="margin-left:-2cm">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true" style="margin-left:153px;"></span>
+          <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="info" style="    width: 96%;
+    height: 180px;
+    border: 3px solid black;
+    margin-left: 30px;
+    /* margin-right: 2px; */
+    border-radius: 22px;
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: bold;">
+        <p style="padding-left: 20px;"><strong>Contact:</strong>{{item.contact}}</p>
+
+        <p style="padding-left: 20px;"><strong>Description:</strong>{{item.desp}}</p>
+        <p style="padding-left: 20px;"><strong>Type:</strong>{{item.housetype}}</p>
+
+        {% if item.issold %}
+        <p style="padding-left: 20px; color: red;"><strong>Availabe:</strong>No</p>
+        {% else %}
+        <p style="padding-left: 20px; color: green;"><strong>Availabe:</strong>Yes</p>
+        {% endif %}
+    </div>
+    <div class="buy" style="padding: 10px; color: white; display: flex; justify-content: center; align-items: center;">
+        {% if request.user == item.createdby %}
+        <button style="padding: 10px; background-color: yellow; width: 90px;">Your Item</button>
+
+        {% elif item.issold%}
+        <button style="padding: 10px; background-color: yellow; width: 90px;">Sold</button>
+
+        {% else %}
+        <a href="{% url 'sold' item.id %}">
+            <button style="padding: 10px; background-color: yellow; width: 60px;">BUY</button>
+        </a>
+        {% endif %}
+    </div>
+    
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+</body>
+</html>
