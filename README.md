@@ -50,6 +50,23 @@ Clicking on the sold goes to the other page i.e.
 
 ![image](https://github.com/vignu687/Home-rental-system/assets/91595577/42b857c0-f2f7-412d-826c-a1d9adf9aede)
 
+# INSTALLATION GUIDE
+
+You can download Python from the link here
+https://www.python.org/downloads/
+
+After installing Python go to your terminal/CMD and type
+pip  install django
+
+To check type
+pip freeze
+
+# RUN
+
+run in CMD/VS code terminal...etc
+
+python manage.py runserver (in case of the above project)
+
 
 
 
